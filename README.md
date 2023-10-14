@@ -15,5 +15,4 @@ We wanted to see the day when Escargot would be available on OS's other than Win
 ### Meet Shamton
 (Hey, that's me!) Hello. My name is not actually Shamton, but that's what I go by online. I am one of the two people that work on this app. I'm in charge of all of the code and fixups in Tokuromu (and the webpage for it). I have my own page over here. Yes, it's a carrd for now, but it will soon be a neocities link like the one you're on now.
 
-### Meet Mr. Crisps
-(he didnt want to fill this in)
+DISCLAIMER: THIS IS IN NO WAY RELATED TO HELLO KITTY.
