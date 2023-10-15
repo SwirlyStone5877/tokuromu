@@ -25,7 +25,7 @@ try:
 		usertxtbox.pack()
 		pwdtxtbox = Entry(logwin, width=50)
 		pwdtxtbox.pack()
-		loginbutton = Button(logwin, text="Login", command=lambda: [writecache("logincache.txt", f"user={usertxtbox.get()}\npwd={pwdtxtbox.get()}"), sleep(1), logwin.destroy(), loginproc()])
+		loginbutton = Button(logwin, text="Login", command=lambda: [writecache("logincache.txt", f"{usertxtbox.get()}\n{pwdtxtbox.get()}"), sleep(1), loginproc(), logwin.destroy()])
 		loginbutton.pack()
 		logwin.mainloop()
 		# Keep the window open until the user logs in
@@ -46,7 +46,7 @@ try:
 		else:
 			# Create the cache
 			os.makedirs(os.path.join(os.environ["HOME"], ".cache/tokuromu"), exist_ok=True)
-			# Open the login window
+			# Open the login window with delay so the login windows appears on top instead of the logging in window, which covers up the login window (common bug)
 			sleep(0.5)
 			loginwindow()
 
@@ -71,12 +71,7 @@ try:
 
 except MemoryError as e:
 	from tkinter import messagebox
-	import random
-	funni = random.randint(1, 10)
-	if funni != 1:
-		messagebox.showerror(f"Oops! Something went wrong!", f"Tokuromu ran out of memory to preform any more operations.")
-	else:
-		messagebox.showerror("", "")
+	messagebox.showerror(f"Oops! Something went wrong!", f"Tokuromu ran out of memory to preform any more operations.")
 except OverflowError as e:
 	from tkinter import messagebox
 	messagebox.showerror(f"Oops! Something went wrong!", f"Something went wrong and Tokuromu needs to close. We're sorry!\n\nSomething happened to a variable that threw something out of whack.")
