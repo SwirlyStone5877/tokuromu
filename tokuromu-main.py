@@ -3,7 +3,7 @@ try:
 	from playsound import *
 	from threading import *
 	from PIL import Image, ImageTk
-	import requests
+	import socket
 	import os
 	from tkinter import Toplevel
 	from time import sleep
@@ -41,8 +41,9 @@ try:
 				username = logindata[0]
 				# Get the password
 				password = logindata[1]
-				# Send info to log in
-				requests.post("https://msnmsgr.escargot.chat", data={"username": username, "password": password})
+				# Create socket object
+				loginobj = socket.Socket()
+				
 		else:
 			# Create the cache
 			os.makedirs(os.path.join(os.environ["HOME"], ".cache/tokuromu"), exist_ok=True)
